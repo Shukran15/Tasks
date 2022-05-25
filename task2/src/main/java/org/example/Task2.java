@@ -8,25 +8,25 @@ public class Task2 {
 
     public static void main(String[] args) {
 
-        float e = 0.00001f;
+        double e = 0.0000001;
 
         try {
             String pathCircle = args[0];
             String pathCoordinate = args[1];
 
             Scanner scanner = new Scanner(new File(pathCircle));
-            float r = scanner.nextFloat();
-            float x0 = scanner.nextFloat();
-            float y0 = scanner.nextFloat();
+
+            double x0 = scanner.nextDouble();
+            double y0 = scanner.nextDouble();
+            double r = scanner.nextDouble();
 
             scanner = new Scanner(new File(pathCoordinate));
 
             while (scanner.hasNext()){
-                float x = scanner.nextFloat();
-                float y = scanner.nextFloat();
+                double x = scanner.nextDouble();
+                double y = scanner.nextDouble();
 
-                float d = (float) Math.sqrt((x - x0) * (x - x0) + (y - y0) * (y - y0));
-                System.out.println(d);
+                double d =  Math.sqrt((x - x0) * (x - x0) + (y - y0) * (y - y0));
                 if(Math.abs(r - d) < e){
                     System.out.println(0);
                 }
